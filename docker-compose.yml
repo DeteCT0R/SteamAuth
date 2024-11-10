@@ -5,6 +5,6 @@ services:
       - OpenID__RedirectUri=https://ebateam-logto.f6dnvr.easypanel.host/callback/emgl690ja9gronnqh70ek
       - OpenID__PostLogoutRedirectUri=http://localhost:3000/auth/logout
       - OpenID__ClientID=steamoidc
-      - OpenID__ClientSecret=<REMOVED>
-      - Authentication__Steam__ApplicationKey=<REMOVED>
+      - OpenID__ClientSecret=${SECRET}
+      - Authentication__Steam__ApplicationKey=${APPKEY}
     restart: unless-stopped
