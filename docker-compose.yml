@@ -1,10 +1,13 @@
 services:
-    steamidp:
-        image: neothor/steam-openid-connect-provider:develop
-        build: ./src
-        environment: 
-            OpenID__ClientID: keycloak
-            OpenID__ClientName: keycloak
-            OpenId__ClientSecret: keycloak
-            OpenID__RedirectUri: https://dev.local/auth/realms/dev/broker/steam/endpoint
-            Hosting__BasePath: /steam
+  steamoidc:
+    image: imperialplugins/steam-openid-connect-provider
+    environment:
+      - OpenID__RedirectUri=http://localhost:3000/auth/login/callback
+      - OpenID__PostLogoutRedirectUri=http://localhost:3000/auth/logout
+      - OpenID__ClientID=steamoidc
+      - OpenID__ClientSecret=<REMOVED>
+      - Authentication__Steam__ApplicationKey=<REMOVED>
+    ports:
+      - '80:80'
+      - '443:443'
+    restart: unless-stopped
