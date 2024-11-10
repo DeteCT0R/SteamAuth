@@ -1,10 +1,4 @@
 services:
   steamoidc:
     image: imperialplugins/steam-openid-connect-provider
-    environment:
-      - OpenID__RedirectUri=https://ebateam-logto.f6dnvr.easypanel.host/callback/emgl690ja9gronnqh70ek
-      - OpenID__PostLogoutRedirectUri=http://localhost:3000/auth/logout
-      - OpenID__ClientID=steamoidc
-      - OpenID__ClientSecret=${SECRET}
-      - Authentication__Steam__ApplicationKey=${APPKEY}
-    restart: unless-stopped
+    restart: unless-stopped 
