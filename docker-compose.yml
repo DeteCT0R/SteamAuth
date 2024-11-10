@@ -1,7 +1,7 @@
 services:
     steam-openid-connect-provider:
         environment:
-            - #OpenID__RedirectUri=http://localhost:8080/auth/realms/master/broker/steam/endpoint 
+           # - OpenID__RedirectUri=http://localhost:8080/auth/realms/master/broker/steam/endpoint 
             - OpenID__ClientID=steamidp
             - OpenID__ClientSecret=mysecret
             - OpenID__ClientName=myclientname
