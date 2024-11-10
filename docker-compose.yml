@@ -7,7 +7,4 @@ services:
       - OpenID__ClientID=steamoidc
       - OpenID__ClientSecret=<REMOVED>
       - Authentication__Steam__ApplicationKey=<REMOVED>
-    ports:
-      - '80:80'
-      - '443:443'
     restart: unless-stopped
