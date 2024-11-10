@@ -3,7 +3,7 @@ services:
         stdin_open: true
         tty: true
         environment:
-            - OpenID__RedirectUri=https://ebateam-steamauth.f6dnvr.easypanel.host/auth/realms/master/broker/steam/endpoint
+            - OpenID__RedirectUri=https://localhost:8080/auth/realms/master/broker/steam/endpoint
             - OpenID__ClientID=steamidp
             - OpenID__ClientSecret=mysecret
             - OpenID__ClientName=myclientname
