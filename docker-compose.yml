@@ -1,10 +1,13 @@
 services:
-  steamoidc:
-    image: imperialplugins/steam-openid-connect-provider
-    environment:
-      - OpenID__RedirectUri=http://localhost:3000/auth/login/callback
-      - OpenID__PostLogoutRedirectUri=http://localhost:3000/auth/logout
-      - OpenID__ClientID=steamoidc
-      - OpenID__ClientSecret=<REMOVED>
-      - Authentication__Steam__ApplicationKey=<REMOVED>
-    restart: unless-stopped
+    steam-openid-connect-provider:
+        stdin_open: true
+        tty: true
+        environment:
+            - OpenID__RedirectUri=http://localhost:8080/auth/realms/master/broker/steam/endpoint
+            - OpenID__ClientID=steamidp
+            - OpenID__ClientSecret=mysecret
+            - OpenID__ClientName=myclientname
+            - Steam__ApplicationKey=MySteamApiKey
+        restart: unless-stopped
+        container_name: steamidp
+        image: ghcr.io/byo-software/steam-openid-connect-provider
