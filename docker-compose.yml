@@ -1,7 +1,7 @@
 services:
     steam-openid-connect-provider:
         environment:
-            - OpenID__RedirectUri=https://ebateam-logto.f6dnvr.easypanel.host/callback/emgl690ja9gronnqh70ek
+            - OpenID__RedirectUri=http://localhost:8080/auth/realms/master/broker/steam/endpoint 
             - OpenID__ClientID=steamidp
             - OpenID__ClientSecret=mysecret
             - OpenID__ClientName=myclientname
